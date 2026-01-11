@@ -251,27 +251,87 @@ header {
     z-index: 100;
 }
 
+/* Logo Container Styling */
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    min-width: 0; /* Important for text truncation */
+    max-width: 100%;
+    gap: 8px;
+  }
+  
+  /* Icon Styling */
+  .logo i {
     font-size: 1.8rem;
+    color: #ff6b35; /* Restaurant theme color */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    min-width: 30px; /* Fixed width for icon */
+  }
+  
+  /* Logo Text Container */
+  .logo-text {
+    display: inline-block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
-    color: var(--white);
-}
-
-.logo i {
-    color: var(--primary);
-    font-size: 2rem;
-}
-
-.logo-text {
-    font-size: 1.8rem;
-}
-
-.logo-highlight {
-    color: var(--primary);
-}
+    font-size: 1.5rem;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  
+  /* Highlight part styling */
+  .logo-highlight {
+    color: #ff6b35;
+  }
+  
+  /* Mobile Responsive Breakpoints */
+  @media (max-width: 768px) {
+    .logo {
+      padding: 0 10px;
+      justify-content: center; /* Center on very small screens */
+    }
+    
+    .logo i {
+      font-size: 1.5rem;
+      min-width: 25px;
+    }
+    
+    .logo-text {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      justify-content: flex-start;
+    }
+    
+    .logo-text {
+      font-size: 1.1rem;
+      max-width: 180px; /* Limit text width on very small screens */
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .logo {
+      gap: 5px;
+    }
+    
+    .logo-text {
+      font-size: 1rem;
+      max-width: 150px;
+    }
+    
+    .logo i {
+      font-size: 1.3rem;
+      min-width: 22px;
+    }
+  }
 
 .main-nav ul {
     display: flex;
